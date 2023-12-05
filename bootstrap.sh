@@ -28,8 +28,9 @@ brew update
 brew tap homebrew/bundle
 brew bundle --file ./Brewfile
 
-# Create Applications/bin directories
+# Create Applications/bin and .config directories
 mkdir -p $HOME/Applications/bin
+mkdir $HOME.config
 
 # Create unraid mounts
 mkdir $HOME/homedir-pbear
