@@ -4,8 +4,6 @@ These instructions are for setting up new Mac devices.
 
 ### Backup the data
 
-If you're migrating from an existing Mac, you should first make sure to backup all of your existing data. Go through the checklist below to make sure you didn't forget anything before you migrate.
-
 - commit and push any changes/branches to your git repositories
 - save all important documents from non-iCloud directories
 - update [mackup](https://github.com/lra/mackup) to the latest version and ran `mackup backup`
