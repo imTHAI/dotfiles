@@ -22,6 +22,7 @@ brew 'fd'
 brew 'ripgrep'
 brew 'python@3.12'
 brew 'eza'
+brew 'swift-quit'
 
 # Apps
 cask 'font-hack-nerd-font'
