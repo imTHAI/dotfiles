@@ -9,6 +9,8 @@ alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 # Directories
 alias dotfiles="cd $DOTFILES"
 alias cdd="cd $HOME/downloads"
+alias cdm="cd $HOME/media"
+alias cddu="cd $HOME/downloads_unraid"
 
 # Git
 alias gst="git status"
