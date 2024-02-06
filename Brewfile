@@ -46,7 +46,7 @@ cask 'adguard'
 cask 'onlyoffice'
 cask 'megasync'
 cask 'alfred'
-
+cask 'keka'
 
 # Mac App Store
 mas 'Mp3tag', id: 1532597159

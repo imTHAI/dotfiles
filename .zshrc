@@ -27,6 +27,7 @@ HIST_STAMPS="dd/mm/yyyy"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+source .dotfiles/aliases.zsh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
