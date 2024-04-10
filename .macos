@@ -76,6 +76,11 @@ defaults write NSGlobalDomain NSTextShowsControlCharacters -bool true
 # Disable Resume system-wide
 # defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
 
+# Remove emoji suggestions
+# https://www.macg.co/macos/2024/04/astuce-retirer-les-suggestions-demojis-de-macos-sonoma-143079
+sudo defaults write /Library/Preferences/FeatureFlags/Domain/UIKit.plist emoji_enhancements -dict-add Enabled -bool NO
+
+
 # Disable automatic termination of inactive apps
 # defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
 
