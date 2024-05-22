@@ -9,6 +9,7 @@ alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 alias sync_photoslib="rsync -avr --delete /Volumes/Mac\ HD\ Extra/Photos\ Library.photoslibrary unraid:/mnt/user/backups/"
 alias sync_calibre="rsync -avr --delete /Volumes/Mac\ HD\ Extra/Librairie\ Calibre unraid:/mnt/user/media/books/"
 
+alias dig="/opt/homebrew/opt/bind/bin/dig"
 
 # Directories
 alias dotfiles="cd $DOTFILES"

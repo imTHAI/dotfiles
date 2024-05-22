@@ -25,35 +25,39 @@ brew 'eza'
 brew 'swift-quit'
 
 # Apps
-cask 'font-hack-nerd-font'
+cask 'font-hack-nerd-font'441258766
 cask '1password'
-cask 'brave-browser'
+#cask 'brave-browser'
 cask 'discord'
 cask 'github'
 cask 'imageoptim'
 cask 'visual-studio-code'
 cask 'calibre'
-cask 'textmate'
-cask 'mediainfo'
 cask 'iina'
-cask 'hiddenbar'
 cask 'filebot'
 cask 'glance'
 cask 'reverso'
 cask 'keybase'
 #cask 'mp3tag'
-cask 'adguard'
-cask 'onlyoffice'
+#cask 'adguard'
 cask 'megasync'
-cask 'alfred'
+#cask 'alfred'
 cask 'keka'
+cask 'quitter'
 
 # Mac App Store
 mas 'Mp3tag', id: 1532597159
 mas '1Password for Safari', id: 1569813296
+mas 'Magnet', id: 441258766
+mas 'Microsoft OneNote', id: 784801555
+mas 'Microsoft Remote Desktop', id: 1295203466
+mas 'MediaInfo', id: 510620098
 mas 'Hover for Safari', id: 1540705431
 #mas 'AdGuard for Safari', id: 1440147259 
 mas 'WhatsApp Messenger', id: 310633997
 mas 'News Explorer', id: 1032670789
 mas 'Search Engines for Safari', id: 1588019370
-
+mas 'DeArrow', id: 6451469297
+mas 'CustomSearch'. id: 1588019370
+mas 'SponsorBlock', id: 1573461917
+mas 'Hidden Bar', id: 1452453066
