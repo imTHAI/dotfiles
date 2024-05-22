@@ -62,3 +62,4 @@ mas 'CustomSearch'. id: 1588019370
 mas 'SponsorBlock', id: 1573461917
 mas 'Hidden Bar', id: 1452453066
 mas 'Telegram Lite', id: 946399090
+mas 'CotEditor', id: 1024640650
