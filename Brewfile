@@ -25,7 +25,7 @@ brew 'eza'
 brew 'swift-quit'
 
 # Apps
-cask 'font-hack-nerd-font'441258766
+cask 'font-hack-nerd-font'
 cask '1password'
 #cask 'brave-browser'
 cask 'discord'
@@ -57,7 +57,7 @@ mas 'WhatsApp Messenger', id: 310633997
 mas 'News Explorer', id: 1032670789
 mas 'Search Engines for Safari', id: 1588019370
 mas 'DeArrow', id: 6451469297
-mas 'CustomSearch'. id: 1588019370
+mas 'CustomSearch', id: 1588019370
 mas 'SponsorBlock', id: 1573461917
 mas 'Hidden Bar', id: 1452453066
 mas 'Telegram Lite', id: 946399090
