@@ -38,12 +38,11 @@ cask 'filebot'
 cask 'glance'
 cask 'reverso'
 cask 'keybase'
-#cask 'mp3tag'
-#cask 'adguard'
 cask 'megasync'
 #cask 'alfred'
 cask 'keka'
 cask 'quitter'
+cask 'floorp'
 
 # Mac App Store
 mas 'Mp3tag', id: 1532597159
