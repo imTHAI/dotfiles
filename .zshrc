@@ -54,3 +54,6 @@ ZSH_CUSTOM=$DOTFILES
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Created by `pipx` on 2024-09-26 07:12:30
+export PATH="$PATH:/Users/pbear/.local/bin"
