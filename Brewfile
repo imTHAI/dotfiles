@@ -10,6 +10,7 @@ brew 'gnu-sed'
 brew 'ffmpeg'
 brew 'gh'
 brew 'git'
+brew 'bind' # Latest version of dig
 brew 'grep'
 brew 'mackup'
 brew 'mas' # Mac App Store manager
