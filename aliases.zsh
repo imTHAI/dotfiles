@@ -8,8 +8,15 @@ alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 alias sync_photoslib="rsync -av --exclude='.DS_Store' --delete /Volumes/Mac\ HD\ Extra/Photos\ Library.photoslibrary coruscant:/mnt/user/backups/"
 alias sync_calibre="rsync -av --exclude='.DS_Store' --delete /Volumes/Mac\ HD\ Extra/Librairie\ Calibre coruscant:/mnt/user/media/books/"
 
+# Backup my local bin folder to coruscant and to iCloud
 alias sync_bin="rsync -av --exclude='.DS_Store' --delete ~/Applications/bin coruscant:/mnt/user/backups/ && \
                 rsync -av --exclude='.DS_Store' --delete ~/Applications/bin /Users/pbear/Library/Mobile\ Documents/com~apple~CloudDocs/Backups/ "
+
+
+# Backup some folders from my homedir on coruscant to iCloud
+alias sync_homedir="for src in coruscant:/mnt/user/homedir-pbear/scripts-NEVERDELETE coruscant:/mnt/user/homedir-pbear/docker ; \
+                    do rsync -av --exclude='.DS_Store' --delete $src /Users/pbear/Library/Mobile\ Documents/com~apple~CloudDocs/Backups/homedir-pbear/ ; done"
+
 alias sed=gsed
 
 
@@ -26,7 +33,7 @@ alias gc="git checkout"
 alias gl="git log --oneline --decorate --color"
 alias amend="git add . && git commit --amend --no-edit"
 alias commit="git add . && git commit -m"
-alias diff="git diff"
+alias gdiff="git diff"
 alias force="git push --force"
 alias nuke="git clean -df && git reset --hard"
 alias pop="git stash pop"
