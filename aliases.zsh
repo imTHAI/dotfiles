@@ -5,9 +5,11 @@ alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 alias ll="eza -l --group-directories-first"
 alias ls="eza --group-directories-first"
 alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
-#alias sync_photoslib="rsync -avr --delete /Users/pbear/Pictures/Photos\ Library.photoslibrary unraid:/mnt/user/backups/"
-alias sync_photoslib="rsync -avr --delete /Volumes/Mac\ HD\ Extra/Photos\ Library.photoslibrary unraid:/mnt/user/backups/"
-alias sync_calibre="rsync -avr --delete /Volumes/Mac\ HD\ Extra/Librairie\ Calibre unraid:/mnt/user/media/books/"
+alias sync_photoslib="rsync -av --exclude='.DS_Store' --delete /Volumes/Mac\ HD\ Extra/Photos\ Library.photoslibrary coruscant:/mnt/user/backups/"
+alias sync_calibre="rsync -av --exclude='.DS_Store' --delete /Volumes/Mac\ HD\ Extra/Librairie\ Calibre coruscant:/mnt/user/media/books/"
+
+alias sync_bin="rsync -av --exclude='.DS_Store' --delete ~/Applications/bin coruscant:/mnt/user/backups/ && \
+                rsync -av --exclude='.DS_Store' --delete ~/Applications/bin /Users/pbear/Library/Mobile\ Documents/com~apple~CloudDocs/Backups/ "
 alias sed=gsed
 
 
