@@ -23,6 +23,8 @@ brew 'ripgrep'
 brew 'python@3.12'
 brew 'eza'
 brew 'swift-quit'
+brew 'proxychains-ng'
+
 
 # Apps
 cask 'font-hack-nerd-font'
