@@ -24,7 +24,7 @@ brew 'python@3.12'
 brew 'eza'
 brew 'swift-quit'
 brew 'proxychains-ng'
-
+brew 'topgrade'
 
 # Apps
 cask 'font-hack-nerd-font'
