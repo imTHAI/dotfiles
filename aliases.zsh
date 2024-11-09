@@ -5,6 +5,8 @@ alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 alias ll="eza -l --group-directories-first"
 alias ls="eza --group-directories-first"
 alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
+alias  dl="aria2c -x4 --dir=/Users/pbear/Downloads"
+
 alias sync_photoslib="rsync -vah --exclude='.DS_Store' --delete \
                      /Volumes/Mac\ HD\ Extra/Photos\ Library.photoslibrary coruscant:/mnt/user/backups/"
 alias sync_calibre="rsync -vah --exclude='.DS_Store' --delete \

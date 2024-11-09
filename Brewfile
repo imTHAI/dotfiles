@@ -25,6 +25,7 @@ brew 'eza'
 brew 'swift-quit'
 brew 'proxychains-ng'
 brew 'topgrade'
+brew 'aria'
 
 # Apps
 cask 'font-hack-nerd-font'
