@@ -42,6 +42,7 @@ cask 'megasync'
 cask 'keka'
 cask 'quitter'
 cask 'floorp'
+cask 'perplexity'
 
 # Mac App Store
 mas 'Mp3tag', id: 1532597159
