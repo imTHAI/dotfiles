@@ -24,6 +24,7 @@ brew 'eza'
 brew 'proxychains-ng'
 brew 'topgrade'
 brew 'aria2'
+brew 'telegram-a'
 
 # Apps
 cask 'font-hack-nerd-font'
