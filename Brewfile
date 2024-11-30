@@ -1,5 +1,4 @@
 # Taps
-tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
 
 # Binaries
@@ -22,7 +21,6 @@ brew 'fd'
 brew 'ripgrep'
 brew 'python@3.12'
 brew 'eza'
-brew 'swift-quit'
 brew 'proxychains-ng'
 brew 'topgrade'
 brew 'aria2'
