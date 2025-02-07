@@ -8,7 +8,7 @@ alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 alias  dl="aria2c -x4 --dir=/Users/pbear/Downloads"
 alias notarize="codesign --deep -f -s -"
 alias sync_photoslib="rsync -vah --exclude='.DS_Store' --delete \
-                     /Volumes/TB_500Go/Photos\ Library.photoslibrary coruscant:/mnt/user/backups/"
+                     /Volumes/TB_500Go/Images/Photos\ Library.photoslibrary coruscant:/mnt/user/backups/"
 alias sync_calibre="rsync -vah --exclude='.DS_Store' --delete \
                      /Volumes/TB_500Go/Librairie\ Calibre coruscant:/mnt/user/media/books/"
 
