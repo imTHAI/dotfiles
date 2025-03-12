@@ -20,7 +20,7 @@ alias sync_bin="rsync -avh --exclude='.DS_Store' --delete ~/Applications/bin cor
 
 # Backup some folders from my homedir on coruscant to iCloud
 #alias sync_homedir="for src in coruscant:/mnt/user/homedir-pbear/scripts-NEVERDELETE coruscant:/mnt/user/homedir-pbear/docker ;\
-#                    do rsync -va --exclude='.DS_Store' --delete --info=name0 --info=copy2,del2,flist0,stats2,misc0,remove2\
+#                    do rsync -va --exclude='.DS_Store' --exclude=/mnt/user/homedir-pbear/scripts-NEVERDELETE/logs  --delete --info=name0 --info=copy2,del2,flist0,stats2,misc0,remove2\
 #                    $src /Users/pbear/Library/Mobile\ Documents/com~apple~CloudDocs/Backups/homedir-pbear/ ; done"
 #alias sync_homedir="for src in coruscant:/mnt/user/homedir-pbear/scripts-NEVERDELETE coruscant:/mnt/user/homedir-pbear/docker ;\
 #                    do rsync -va --exclude='.DS_Store' --delete $src /Users/pbear/Library/Mobile\ Documents/com~apple~CloudDocs/Backups/homedir-pbear/ ; done"
