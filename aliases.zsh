@@ -19,7 +19,35 @@ alias sync_bin="rsync -avh --exclude='.DS_Store' --delete ~/Applications/bin cor
 
 
 # Backup some folders from my homedir on coruscant to iCloud
-alias sync_homedir="rsync -vah -e ssh --exclude='Recycle.Bin' --exclude='.DS_Store' --exclude='instagram' --exclude='__pycache__' --delete coruscant:/mnt/user/homedir-pbear/ '/Users/pbear/Library/Mobile Documents/com~apple~CloudDocs/Backups/homedir-pbear/' "
+alias sync_homedir="rsync -vah -e ssh --exclude='Survivalisme' --exclude='Recycle.Bin' --exclude='.DS_Store' --exclude='instagram' --exclude='__pycache__' --delete coruscant:/mnt/user/homedir-pbear/ '/Users/pbear/Library/Mobile Documents/com~apple~CloudDocs/Backups/homedir-pbear/' "
+
+alias dtbackup='
+BACKUP_SRC="$HOME/Databases"
+BACKUP_DST="/mnt/user/backups/DEVONthink"
+REMOTE_HOST="coruscant"
+DATE=$(date +%F)
+
+for DB in "$BACKUP_SRC"/*.(dtBase2|dtSparse)(N); do
+  EXT="${DB##*.}"
+  BASENAME=$(basename "$DB" .$EXT)
+  REMOTE_PATH="$BACKUP_DST/${BASENAME}_$DATE.$EXT"
+
+  echo "🔄 Backup de $BASENAME.$EXT vers $REMOTE_HOST:$REMOTE_PATH"
+
+  # Test si fichier ou dossier
+  if [ -d "$DB" ]; then
+    rsync -avz "$DB/" "$REMOTE_HOST:$REMOTE_PATH/"
+  else
+    rsync -avz "$DB" "$REMOTE_HOST:$REMOTE_PATH"
+  fi
+
+  echo "🧹 Rotation des anciennes versions (max 2 gardées)..."
+  ssh "$REMOTE_HOST" "cd $BACKUP_DST && ls -dt ${BASENAME}_*.$EXT 2>/dev/null | tail -n +3 | xargs -r rm -rf"
+done
+
+echo '✅ Backup terminé.'
+'
+
 
 # Fonction rm personnalisée qui déplace les fichiers vers ~/.Recycle au lieu de les supprimer
 function rm {
