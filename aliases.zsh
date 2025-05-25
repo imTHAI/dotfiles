@@ -6,7 +6,6 @@ alias ll="eza -l --group-directories-first"
 alias ls="eza --group-directories-first"
 alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 alias  dl="aria2c -x4 --dir=/Users/pbear/Downloads"
-#alias notarize="codesign --deep -f -s -"
 alias macos_sign="xattr -cr"
 alias sync_photoslib="rsync -vah --exclude='.DS_Store' --delete \
                      /Volumes/TB_500Go/Images/Photos\ Library.photoslibrary coruscant:/mnt/user/backups/"
@@ -18,8 +17,18 @@ alias sync_bin="rsync -avh --exclude='.DS_Store' --delete ~/Applications/bin cor
                 rsync -avh --exclude='.DS_Store' --delete ~/Applications/bin /Users/pbear/Library/Mobile\ Documents/com~apple~CloudDocs/Backups/ "
 
 
+ogg2m4a() {
+    find . -name "*.ogg" -type f -exec sh -c 'mkdir -p output && basename_file=$(basename "$1" .ogg) \
+    && clean_name=$(echo "$basename_file" | sed "s/^[0-9]\+\. //") && ffmpeg -i "$1" -vn -c:a alac -f mp4 "output/${clean_name}.m4a"' _ {} \;
+}
+
 # Backup some folders from my homedir on coruscant to iCloud
 alias sync_homedir="rsync -vah -e ssh --exclude='Survivalisme' --exclude='Recycle.Bin' --exclude='.DS_Store' --exclude='instagram' --exclude='__pycache__' --delete coruscant:/mnt/user/homedir-pbear/ '/Users/pbear/Library/Mobile Documents/com~apple~CloudDocs/Backups/homedir-pbear/' "
+
+flac2m4u() {
+    find . -name "*.flac" -type f -exec sh -c 'mkdir -p output && basename_file=$(basename "$1" .flac) \
+    && clean_name=$(echo "$basename_file" | sed "s/^[0-9]\+\. //") && ffmpeg -i "$1" -vn -c:a alac -f mp4 "output/${clean_name}.m4a"' _ {} \;
+}
 
 alias dtbackup='
 BACKUP_SRC="$HOME/Databases"
