@@ -7,9 +7,9 @@ pip() {
     command pip "$@"
   fi
 }
-alias buildpushmyarch='docker build --platform=linux/amd64 -t imthai/myarch -f Dockerfile_arch . && docker push imthai/myarch'
-alias arch_docker="docker run -it --rm --platform=linux/amd64 -v ~/downloads:/downloads -v ~/.home_archdocker:/root imthai/myarch"
-
+alias buildpushmyarch='docker build --platform=linux/amd64 -t imthai/myarch -f ~/Applications/bin/Dockerfile_arch . && docker push imthai/myarch'
+alias arch_docker="docker run --hostname arch_docker -it --rm --platform=linux/amd64 -v ~/downloads:/downloads -v ~/.home_archdocker:/root imthai/myarch"
+alias ytdl='yt-dlp -f "bv*[height=1080][ext=mp4][vcodec^=avc1]+ba[ext=m4a]/bestvideo[height=1080][vcodec^=avc1]+bestaudio[ext=m4a]/best[ext=mp4]"'
 alias copyssh="pbcopy < $HOME/.ssh/id_ed25519.pub"
 alias reloadshell="source $HOME/.zshrc"
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
