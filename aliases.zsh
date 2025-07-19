@@ -8,7 +8,7 @@ pip() {
   fi
 }
 
-
+alias arch_docker="docker run -it --rm --platform=linux/amd64 -v ~/downloads:/downloads -v ~/.home_archdocker:/root imthai/myarch"
 alias copyssh="pbcopy < $HOME/.ssh/id_ed25519.pub"
 alias reloadshell="source $HOME/.zshrc"
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
