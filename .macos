@@ -18,10 +18,19 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName $hostn
-sudo scutil --set HostName $hostn
-sudo scutil --set LocalHostName $hostn
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName $hostn
+echo -n "Entrez le nom d'hôte souhaité : "
+read hostn
+if [[ -z "$hostn" ]]; then
+  echo "Erreur : aucun nom d'hôte fourni."
+  exit 1
+fi
+
+sudo scutil --set ComputerName "$hostn"
+sudo scutil --set HostName "$hostn"
+sudo scutil --set LocalHostName "$hostn"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName "$hostn"
+
+echo "✅ Nom d'hôte défini sur : $hostn"
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
