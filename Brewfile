@@ -18,9 +18,7 @@ brew 'fd'
 brew 'ripgrep'
 brew 'python'
 brew 'eza'
-brew 'proxychains-ng'
 brew 'topgrade'
-brew 'telegram-a'
 
 # Apps
 cask 'font-hack-nerd-font'
@@ -32,11 +30,9 @@ cask 'visual-studio-code'
 cask 'calibre'
 cask 'iina'
 cask 'filebot'
-cask 'glance'
 cask 'keybase'
 cask 'megasync'
 cask 'keka'
-cask 'perplexity'
 
 # Mac App Store
 mas 'Mp3tag', id: 1532597159
