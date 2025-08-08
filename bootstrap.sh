@@ -30,7 +30,7 @@ brew bundle --file ./Brewfile
 
 # Create Applications/bin and .config directories
 mkdir -p $HOME/Applications/bin
-mkdir $HOME.config
+mkdir $HOME/.config
 
 # Create unraid mounts
 mkdir $HOME/homedir-pbear
@@ -48,7 +48,7 @@ sudo mount -t nfs -o vers=4 $unraid:/mnt/user/downloads /Users/pbear/downloads_u
 ln -sf .dotfiles/.mackup.cfg $HOME/.mackup.cfg
 
 # Symlink the .config config files folder to the home directory
-n -sf $HOME/Library/Mobile\ Documents/com\~apple\~CloudDocs/Backups/Mackup/.config $HOME/.config
+ln -sf $HOME/Library/Mobile\ Documents/com\~apple\~CloudDocs/Backups/Mackup/.config $HOME/.config
 
 
 # Set macOS preferences - we will run this last because this will reload the shell
