@@ -1,15 +1,12 @@
-# Taps
-tap 'homebrew/bundle'
-
 # Binaries
 brew 'bash' # Latest Bash version
 brew 'nano' # Latest nano version
 brew 'coreutils' # Those that come with macOS are outdated
 brew 'gnu-sed'
 brew 'ffmpeg'
-brew 'gh'
+#brew 'gh'
 brew 'git'
-brew 'bind' # Latest version of dig
+#brew 'bind' # Latest version of dig. replaced by dug
 brew 'grep'
 brew 'mackup'
 brew 'mas' # Mac App Store manager
@@ -19,11 +16,10 @@ brew 'neofetch'
 brew 'wget'
 brew 'fd'
 brew 'ripgrep'
-brew 'python@3.12'
+brew 'python'
 brew 'eza'
 brew 'proxychains-ng'
 brew 'topgrade'
-brew 'aria2'
 brew 'telegram-a'
 
 # Apps
@@ -40,15 +36,11 @@ cask 'glance'
 cask 'keybase'
 cask 'megasync'
 cask 'keka'
-cask 'quitter'
-cask 'floorp'
 cask 'perplexity'
 
 # Mac App Store
 mas 'Mp3tag', id: 1532597159
 mas '1Password for Safari', id: 1569813296
-mas 'Microsoft OneNote', id: 784801555
-mas 'Microsoft Remote Desktop', id: 1295203466
 mas 'MediaInfo', id: 510620098
 mas 'Hover for Safari', id: 1540705431
 mas 'WhatsApp Messenger', id: 310633997
