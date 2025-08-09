@@ -32,6 +32,13 @@ brew bundle --file ./Brewfile
 mkdir -p $HOME/Applications/bin
 mkdir $HOME/.config
 
+# Add ~/Applications/bin to PATH if not already present
+if ! echo $PATH | grep -q "$HOME/Applications/bin"; then
+  echo 'export PATH="$HOME/Applications/bin:$PATH"' >> $HOME/.zprofile
+  export PATH="$HOME/Applications/bin:$PATH"
+fi
+
+
 # Create unraid mounts
 mkdir $HOME/homedir-pbear
 mkdir $HOME/downloads_unraid
