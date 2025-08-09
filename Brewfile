@@ -34,6 +34,7 @@ cask 'keybase'
 cask 'megasync'
 cask 'keka'
 cask 'alfred'
+cask 'adguard'
 
 # Mac App Store
 mas 'Mp3tag', id: 1532597159
