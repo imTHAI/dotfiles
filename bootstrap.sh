@@ -38,6 +38,10 @@ if ! echo $PATH | grep -q "$HOME/Applications/bin"; then
   export PATH="$HOME/Applications/bin:$PATH"
 fi
 
+# Configure SSH to use macOS Keychain
+if [ -f "$HOME/.ssh/id_ed25519" ]; then
+  ssh-add --apple-use-keychain "$HOME/.ssh/id_ed25519"
+fi
 
 # Create unraid mounts
 mkdir $HOME/homedir-pbear
