@@ -55,6 +55,14 @@ ln -sf .dotfiles/.mackup.cfg $HOME/.mackup.cfg
 # Symlink the .config config files folder to the home directory
 ln -sf $HOME/Library/Mobile\ Documents/com\~apple\~CloudDocs/Backups/Mackup/.config $HOME/.config
 
+# Restore Mackup configuration safely
+if command -v mackup >/dev/null 2>&1; then
+  echo "Restoring Mackup configuration..."
+  mackup restore || echo "⚠️ Mackup restore failed. Please check for conflicting files."
+else
+  echo "Mackup not found. Please install it with 'brew install mackup'."
+fi
+
 
 # Set macOS preferences - we will run this last because this will reload the shell
 source ./.macos
