@@ -37,12 +37,6 @@ mkdir $HOME/homedir-pbear
 mkdir $HOME/downloads_unraid
 mkdir $HOME/media
 
-read -p 'Unraid server IP: ' unraid
-
-# mount some personnal shares:
-sudo mount -t nfs -o vers=4 $unraid:/mnt/user/homedir-pbear /Users/pbear/homedir-pbear
-sudo mount -t nfs -o vers=4 $unraid:/mnt/user/media /Users/pbear/media
-sudo mount -t nfs -o vers=4 $unraid:/mnt/user/downloads /Users/pbear/downloads_unraid
 
 # Symlink the Mackup config file to the home directory
 ln -sf .dotfiles/.mackup.cfg $HOME/.mackup.cfg
