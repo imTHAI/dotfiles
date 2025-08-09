@@ -33,6 +33,7 @@ cask 'filebot'
 cask 'keybase'
 cask 'megasync'
 cask 'keka'
+cask 'alfred'
 
 # Mac App Store
 mas 'Mp3tag', id: 1532597159
