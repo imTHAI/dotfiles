@@ -19,6 +19,8 @@ brew 'ripgrep'
 brew 'python'
 brew 'eza'
 brew 'topgrade'
+brew 'yt-dlp'
+brew 'colima'
 
 # Apps
 cask 'font-hack-nerd-font'
