@@ -21,6 +21,7 @@ brew 'eza'
 brew 'topgrade'
 brew 'yt-dlp'
 brew 'colima'
+brew 'rsync'
 
 # Apps
 cask 'font-hack-nerd-font'
