@@ -19,9 +19,9 @@ alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 alias  dl="aria2c -x4 --dir=/Users/pbear/Downloads"
 alias macos_sign="xattr -cr"
 alias sync_photoslib="rsync -vah --exclude='.DS_Store' --delete \
-                     /Volumes/TB_500Go/Images/Photos\ Library.photoslibrary coruscant:/mnt/user/backups/ \
-                   && rsync -vah --exclude='.DS_Store' --delete \
-                     /Volumes/TB_500Go/Images/ColdStorage.photoslibrary coruscant:/mnt/user/backups/"
+                     /Users/pbear/Pictures/Photos\ Library.photoslibrary coruscant:/mnt/user/backups/"
+#                   && rsync -vah --exclude='.DS_Store' --delete \
+#                     /Volumes/TB_500Go/Images/ColdStorage.photoslibrary coruscant:/mnt/user/backups/"
 alias sync_calibre="rsync -vah --exclude='.DS_Store' --delete \
                      /Volumes/TB_500Go/Librairie\ Calibre coruscant:/mnt/user/media/books/"
 alias sync_udmroot="rsync -vah -e ssh --delete udm:/root/ --include='.bashrc' --exclude='.*' /Users/pbear/Library/Mobile\ Documents/com~apple~CloudDocs/Backups/udm/root/"
@@ -59,42 +59,38 @@ BACKUP_DST="/mnt/user/backups/DEVONthink"
 REMOTE_HOST="coruscant"
 DATE=$(date +%F)
 
-for DB in "$BACKUP_SRC"/*.dtBase2 "$BACKUP_SRC"/*.dtSparse; do
-  EXT="${DB##*.}"
-  BASENAME=$(basename "$DB" .$EXT)
+for DB in "$BACKUP_SRC"/*.dtSparse; do
+  [ -e "$DB" ] || continue  # Skip si aucun fichier .dtSparse trouvé
+  
+  BASENAME=$(basename "$DB" .dtSparse)
 
-  # Vérification de fermeture
-  if [ "$EXT" = "dtBase2" ]; then
-    if [ -e "$DB/.lock" ]; then
-      echo "⏸️ Base $BASENAME.$EXT ouverte, sautée."
-      continue
-    fi
-  elif [ "$EXT" = "dtSparse" ]; then
-    MOUNTED=$(hdiutil info | grep -F "$DB")
-    if [ -n "$MOUNTED" ]; then
-      echo "⏸️ Image $BASENAME.$EXT montée, sautée."
-      continue
-    fi
+  # Vérifier si l'\''image est montée
+  MOUNTED=$(hdiutil info | grep -F "$DB")
+  if [ -n "$MOUNTED" ]; then
+    echo "⏸️ Image $BASENAME.dtSparse montée, sautée."
+    continue
   fi
 
-  REMOTE_PATH="$BACKUP_DST/${BASENAME}_$DATE.$EXT"
+  REMOTE_PATH="$BACKUP_DST/${BASENAME}_$DATE.dtSparse"
 
-  echo "🔄 Backup de $BASENAME.$EXT vers $REMOTE_HOST:$REMOTE_PATH"
+  echo "🔄 Backup de $BASENAME.dtSparse vers $REMOTE_HOST:$REMOTE_PATH"
 
-  if [ -d "$DB" ]; then
-    rsync -avz "$DB/" "$REMOTE_HOST:$REMOTE_PATH/"
+  # Options optimisées pour fichiers uniques volumineux
+  rsync -av --timeout=300 --partial \
+    "$DB" "$REMOTE_HOST:$REMOTE_PATH"
+
+  if [ $? -eq 0 ]; then
+    echo "✅ $BASENAME.dtSparse sauvegardé avec succès"
   else
-    rsync -avz "$DB" "$REMOTE_HOST:$REMOTE_PATH"
+    echo "❌ Erreur lors du backup de $BASENAME.dtSparse"
   fi
 
   echo "🧹 Rotation des anciennes versions (max 4 gardées)..."
-  ssh "$REMOTE_HOST" "cd $BACKUP_DST && ls -dt ${BASENAME}_*.$EXT 2>/dev/null | tail -n +5 | xargs -r rm -rf"
+  ssh "$REMOTE_HOST" "cd $BACKUP_DST && ls -dt ${BASENAME}_*.dtSparse 2>/dev/null | tail -n +5 | xargs -r rm -f"
 done
 
 echo "✅ Backup terminé."
 '
-
-
 
 # Fonction rm personnalisée qui déplace les fichiers vers ~/.Recycle au lieu de les supprimer
 function rm {

@@ -48,6 +48,10 @@ mkdir $HOME/homedir-pbear
 mkdir $HOME/downloads_unraid
 mkdir $HOME/media
 
+# Enable Touch ID for sudo by uncommenting the auth line
+sed -e 's/^#auth/auth/' /etc/pam.d/sudo_local.template | sudo tee /etc/pam.d/sudo_local
+
+
 
 # Symlink the Mackup config file to the home directory
 ln -sf .dotfiles/.mackup.cfg $HOME/.mackup.cfg
