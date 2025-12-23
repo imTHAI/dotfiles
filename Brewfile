@@ -1,4 +1,8 @@
+# Taps
+tap 'tw93/tap'
+
 # Binaries
+brew 'mole'
 brew 'bash' # Latest Bash version
 brew 'nano' # Latest nano version
 brew 'coreutils' # Those that come with macOS are outdated
